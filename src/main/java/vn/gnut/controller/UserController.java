@@ -1,6 +1,7 @@
 package vn.gnut.controller;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import org.springframework.web.bind.annotation.*;
 import vn.gnut.dto.request.UserRequestDTO;
 
@@ -28,8 +29,9 @@ public class UserController {
     //Update 1 phần thì nên sử dụng method PATCH
     @PatchMapping("{userId}")
     public String changeStatus(
-            @PathVariable int userId,
-            @RequestParam(required = false) boolean status //Để required = false thì k cần thiết lúc nào
+            @PathVariable @Min(1) int userId,
+//            @RequestParam(required = false) boolean status //Để required = false thì k cần thiết lúc nào
+            @Min(1) @RequestParam int status //Test validate
             //cũng phải nhập param này vì set vậy thì nó k bắt buộc
     ) {
         System.out.println("Request change user status: " + userId);
@@ -37,7 +39,7 @@ public class UserController {
     }
 
     @DeleteMapping("{userId}")
-    public String deleteUser(@PathVariable int userId) {
+    public String deleteUser(@Min (1) @PathVariable int userId) { //Validate userID tối thiểu = 1
         System.out.println("Request delete userID: " + userId);
         return "User deleted";
     }
