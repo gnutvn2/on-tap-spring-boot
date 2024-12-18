@@ -1,0 +1,6 @@
+@NotNull: để nói rằng một trường giá trị không được rỗng.
+@NotEmpty: để nói rằng trường danh sách không được để trống.
+@NotBlank: để nói rằng trường giá trị chuỗi không được là chuỗi trống (tức là nó phải có ít nhất một ký tự).
+@Min và @Max: để nói rằng một trường giá trị số chỉ hợp lệ khi giá trị của nó cao hơn hoặc thấp hơn một giá trị nhất định.
+@Pattern: để nói rằng trường giá trị chuỗi chỉ hợp lệ khi nó khớp với một biểu thức chính quy nhất định.
+@Email: để nói rằng trường giá trị chuỗi phải là địa chỉ email hợp lệ.
