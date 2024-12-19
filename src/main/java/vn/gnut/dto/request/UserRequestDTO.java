@@ -47,11 +47,15 @@ public class UserRequestDTO implements Serializable {
     @EnumValue(name = "type", enumClass = UserType.class)
     private String type;
 
-    public UserRequestDTO(String firstName, String lastName, String phone, String email) {
+    public UserRequestDTO(String firstName, String lastName, String email, String phone, Date dateOfBirth, UserStatus status, Gender gender, String type) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phone = phone;
         this.email = email;
+        this.phone = phone;
+        this.dateOfBirth = dateOfBirth;
+        this.status = status;
+        this.gender = gender;
+        this.type = type;
     }
 
     public String getFirstName() {
